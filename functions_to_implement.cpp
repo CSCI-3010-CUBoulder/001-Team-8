@@ -1,5 +1,6 @@
 /* String functions section */
-
+#include <vector>
+#include <iostream>
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
@@ -30,7 +31,14 @@ std::vector<bool> EvenMask(std::vector<int>);
 std::vector<bool> OddMask(std::vector<int>);
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
+int Sum(std::vector<int> nums){
+	int sums = 0;
+	for (int i = 0; i<10; i++){
+		sums = nums[i] + sums;
+		std::cout << nums[i];
+	}
+	return sums;
+}
 
 // Multiplies all numbers in a vector together and returns the resulting value
 int Product(std::vector<int> nums);
