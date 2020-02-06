@@ -10,7 +10,19 @@ std::string RemoveAllSubstrings(std::string s1, std::string s2);
 std::string RemoveFirstSubstring(std::string s1, std::string s2);
 
 // Joins all strings in a vector together, using the glue string in between them
-std::string Join(std::vector<std::string> pieces, std::string glue);
+std::string Join(std::vector<std::string> pieces, std::string glue)
+{
+    std::string combine = "";
+    for (int i = 0; i < pieces.size(); i++)
+    {
+        combine += pieces[i];
+        if (i != pieces.size()-1)
+        {
+            combine += glue;
+        }
+    }
+    return combine;
+}
 
 // takes two vectors of integers, a and b. The function then removes elements from a if they are also in b.
 // If the integer is in b, but not in a, nothing happens.
