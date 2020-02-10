@@ -1,5 +1,6 @@
 /* String functions section */
-
+#include <vector>
+#include <iostream>
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
@@ -10,7 +11,19 @@ std::string RemoveAllSubstrings(std::string s1, std::string s2);
 std::string RemoveFirstSubstring(std::string s1, std::string s2);
 
 // Joins all strings in a vector together, using the glue string in between them
-std::string Join(std::vector<std::string> pieces, std::string glue);
+std::string Join(std::vector<std::string> pieces, std::string glue)
+{
+    std::string combine = "";
+    for (int i = 0; i < pieces.size(); i++)
+    {
+        combine += pieces[i];
+        if (i != pieces.size()-1)
+        {
+            combine += glue;
+        }
+    }
+    return combine;
+}
 
 // takes two vectors of integers, a and b. The function then removes elements from a if they are also in b.
 // If the integer is in b, but not in a, nothing happens.
@@ -30,13 +43,27 @@ std::vector<bool> EvenMask(std::vector<int>);
 std::vector<bool> OddMask(std::vector<int>);
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
+int Sum(std::vector<int> nums){
+	int sums = 0;
+	for (int i = 0; i<10; i++){
+		sums = nums[i] + sums;
+		std::cout << nums[i];
+	}
+	return sums;
+}
 
 // Multiplies all numbers in a vector together and returns the resulting value
 int Product(std::vector<int> nums);
 
 // Adds an integer n to each element of a given vector
-std::vector<int> VectorPlusN(std::vector<int> v, int n);
+std::vector<int> VectorPlusN(std::vector<int> v, int n)
+{
+    for (unsigned int i = 0; i < v.size(); i ++)
+    {
+        v[i] += n;
+    }
+    return v;
+}
 
 // Multiples an integer n with each element of a given vector
 std::vector<int> VectorTimesN(std::vector<int> v, int n);
