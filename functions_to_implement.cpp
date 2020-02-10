@@ -40,7 +40,23 @@ std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
 std::vector<bool> EvenMask(std::vector<int>);
 
 // returns a vector with true for odd numbers and false for even numbers
-std::vector<bool> OddMask(std::vector<int>);
+std::vector<bool> OddMask(std::vector<int> var)
+{
+    std::vector<bool> solution;
+    for (int i  = 0; i < var.size(); i++)
+    {
+        if (var[i] % 2 == 1)
+        {
+            solution.push_back(true);
+        }
+        else
+        {
+            solution.push_back(false);
+        }
+    }
+
+    return solution;
+}
 
 // Sums all numbers in a vector and returns the resulting value
 int Sum(std::vector<int> nums){
