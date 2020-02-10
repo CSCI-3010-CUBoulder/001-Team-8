@@ -82,7 +82,14 @@ std::vector<int> VectorPlusN(std::vector<int> v, int n)
 }
 
 // Multiples an integer n with each element of a given vector
-std::vector<int> VectorTimesN(std::vector<int> v, int n);
+std::vector<int> VectorTimesN(std::vector<int> v, int n)
+{
+    for (unsigned int i = 0; i < v.size(); i ++)
+    {
+        v[i] *= n;
+    }
+    return v;
+}
 
 // takes in two integers and returns a vector of size n with
 // values n*1, n*2, n*3... up to n*m
