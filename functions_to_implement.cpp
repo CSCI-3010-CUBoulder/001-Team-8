@@ -91,6 +91,21 @@ std::vector<int> VectorPlusN(std::vector<int> v, int n)
     return v;
 }
 
+TEST_CASE("Vectors are increased by n","[VectorPlusN]")
+{
+    std::vector<int> v_original = {1,2,3,4,5};
+    std::vector<int> v_to_change = {1,2,3,4,5};
+    int n = 5;
+
+    v_to_change = VectorPlusN(v_to_change, n);
+    
+    REQUIRE( v_to_change[0] == v_original[0] + n);
+    REQUIRE( v_to_change[1] == v_original[1] + n);
+    REQUIRE( v_to_change[2] == v_original[2] + n);
+    REQUIRE( v_to_change[3] == v_original[3] + n);
+    REQUIRE( v_to_change[4] == v_original[4] + n);
+}
+
 // Multiples an integer n with each element of a given vector
 std::vector<int> VectorTimesN(std::vector<int> v, int n)
 {
