@@ -8,5 +8,5 @@ all: test
 clean:
 	rm test
 	
-test: functions_to_impliment.cpp
-	$(CXX) $(CXXFLAGS) functions_to_impliment.cpp -o test
+test: functions_to_implement.cpp
+	$(CXX) $(CXXFLAGS) functions_to_implement.cpp -o test
