@@ -65,7 +65,7 @@ TEST_CASE("Vector of odds an evens", "[vector]")
     std::vector<int> tvect = {1,2,3,4,5,6,7,8,9,10};
     std::vector<bool> answer = {true,false,true,false,true,false,true,false,true,false};
 
-    REQUIRE( EvenMask(tvect) == answer );
+    REQUIRE( OddMask(tvect) == answer );
 }
 
 // Sums all numbers in a vector and returns the resulting value
